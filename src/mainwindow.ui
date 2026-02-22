@@ -866,13 +866,13 @@ QGroupBox::title {
   <customwidget>
    <class>RubikPlat</class>
    <extends>QWidget</extends>
-   <header>src/rubikplat.h</header>
+   <header>src/Cube2D/rubikplat.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
    <class>RubikPlatEditor</class>
    <extends>QWidget</extends>
-   <header>src/rubikplateditor.h</header>
+   <header>src/Cube2D/rubikplateditor.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
@@ -883,7 +883,7 @@ QGroupBox::title {
   <customwidget>
    <class>GLRubik</class>
    <extends>QOpenGLWidget</extends>
-   <header>src/glrubik.h</header>
+   <header>src/Cube3D/glrubik.h</header>
   </customwidget>
  </customwidgets>
  <resources>

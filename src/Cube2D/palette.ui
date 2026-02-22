@@ -56,7 +56,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/palette.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/palette.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -96,7 +96,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_white.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_white.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -127,7 +127,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_yellow.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_yellow.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -158,7 +158,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_orange.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_orange.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -189,7 +189,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_red.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_red.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -226,7 +226,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_green.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_green.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -257,7 +257,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="../ressources.qrc">:/palette/Images/palette/color_blue.png</pixmap>
+    <pixmap resource="../../ressources.qrc">:/palette/Images/palette/color_blue.png</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -290,11 +290,11 @@ peindre votre cube</string>
   <customwidget>
    <class>CouleurPalette</class>
    <extends>QLabel</extends>
-   <header>src/couleurpalette.h</header>
+   <header>src/Cube2D/couleurpalette.h</header>
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../ressources.qrc"/>
+  <include location="../../ressources.qrc"/>
  </resources>
  <connections/>
 </ui>

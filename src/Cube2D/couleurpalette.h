@@ -16,12 +16,39 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "qdisplaydescription.h"
+#ifndef COULEURPALETTE_H
+#define COULEURPALETTE_H
 
-#include <QVBoxLayout>
+#include <QIcon>
+#include <QLabel>
 
-QDisplayDescription::QDisplayDescription(const QString &iMethod)
-    : QDialog()
+#include "../variables.h"
+
+class CouleurPalette : public QLabel
 {
+    Q_OBJECT
 
-}
+public:
+    CouleurPalette(QWidget*);
+
+    void setColor(Color);
+    void Retrieve_Color();
+    void setBrushColor(const QString&);
+
+protected:
+    void enterEvent(QEnterEvent *ev) override;
+    void leaveEvent(QEvent *ev) override;
+    void mousePressEvent(QMouseEvent* event) override;
+
+private:
+    Color _color = GREY;
+    QString _color_brush;
+    QPixmap _icon;
+    QPixmap _icon_hovered;
+    QString _color_string;
+
+signals:
+    void changeColor(Color);
+};
+
+#endif // COULEURPALETTE_H

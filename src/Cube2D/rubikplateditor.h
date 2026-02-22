@@ -16,12 +16,35 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "qdisplaydescription.h"
+#ifndef RUBIKPLATEDITOR_H
+#define RUBIKPLATEDITOR_H
 
-#include <QVBoxLayout>
+#include <QWidget>
 
-QDisplayDescription::QDisplayDescription(const QString &iMethod)
-    : QDialog()
-{
-
+namespace Ui {
+    class RubikPlatEditor;
 }
+
+class RubikPlat;
+class Palette;
+class QToolButton;
+
+class RubikPlatEditor : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit RubikPlatEditor(QWidget *parent = nullptr);
+    ~RubikPlatEditor();
+
+    RubikPlat* getRubikPlat();
+    Palette* getPalette();
+    void resetColors();
+    void translate();
+
+private:
+    Ui::RubikPlatEditor *ui;
+    QToolButton* Initialiser_Cube;
+};
+
+#endif // RUBIKPLATEDITOR_H

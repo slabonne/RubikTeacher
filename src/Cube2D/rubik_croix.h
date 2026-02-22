@@ -16,12 +16,28 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "qdisplaydescription.h"
+#ifndef __RUBIK_CROIX__
+#define __RUBIK_CROIX__
 
-#include <QVBoxLayout>
+#include <QFrame>
 
-QDisplayDescription::QDisplayDescription(const QString &iMethod)
-    : QDialog()
+class Rubik_Croix : public QFrame
 {
+public:
+    Rubik_Croix();
+    Rubik_Croix(int s);
+    ~Rubik_Croix();
 
-}
+protected:
+    QFrame *face[6];
+    int s;
+    int s2;
+    int gap;
+
+private:
+    void Build_Rubik_Croix();
+};
+
+#endif
+
+

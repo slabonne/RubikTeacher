@@ -16,12 +16,31 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "qdisplaydescription.h"
+#ifndef QTHREADMVTFACE_H
+#define QTHREADMVTFACE_H
 
-#include <QVBoxLayout>
+#include <QThread>
 
-QDisplayDescription::QDisplayDescription(const QString &iMethod)
-    : QDialog()
+class MainWindow;
+class QSemaphore;
+
+class QThreadMvtFace : public QThread
 {
+ private:
+    MainWindow * _mainFrame = nullptr;
 
-}
+ public:
+    QThreadMvtFace(MainWindow * fenprincipale);
+
+    QSemaphore * _semMvtFace = nullptr;
+    QSemaphore * _semMvtDispo = nullptr;
+
+    void run();
+    void addMvt(unsigned char mvt);
+    void addMvts(const std::vector<unsigned char>& mvts);
+    void stopThread();
+
+    std::vector<unsigned char> _mvts;
+};
+
+#endif // QTHREADMVTFACE_H
