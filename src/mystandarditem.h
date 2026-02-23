@@ -52,7 +52,8 @@ public:
 
     AlgoType getType() const {return _type; }
 
-    int position = 0;
+    int indexAlgoDisplayed = 0;
+
     AlgoType _type = ALGO;
 
     bool isSoluce();

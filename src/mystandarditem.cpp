@@ -48,28 +48,31 @@ Algorithm *MyStandardItem::getAlgo()
 
 int MyStandardItem::getCurrentMvt()
 {
-    if (position >= _algo._mvts.size())
+    if (indexAlgoDisplayed >= _algo._mvts.size())
         return _VOID_;
-    return _algo._mvts[position];
+    return _algo._mvts[indexAlgoDisplayed];
 }
 
 int MyStandardItem::getNextMvt()
 {
-    if (position+1 >= _algo._mvts.size())
+    qDebug() << "getNextMvt()";
+    if (indexAlgoDisplayed+1 >= _algo._mvts.size())
         return _VOID_;
-    return _algo._mvts[position+1];
+    return _algo._mvts[indexAlgoDisplayed+1];
 }
 
 int MyStandardItem::getPrevMvt()
 {
-    if (position-1 < 0 || position-1 >= _algo._mvts.size())
+    if (indexAlgoDisplayed-1 < 0 || indexAlgoDisplayed-1 >= _algo._mvts.size())
         return _VOID_;
-    return _algo._mvts[position-1];
+    return _algo._mvts[indexAlgoDisplayed-1];
 }
+
+
 
 void MyStandardItem::move(int p)
 {
-    position += p;
+    indexAlgoDisplayed += p;
 }
 
 QString MyStandardItem::getStringAlgo()
@@ -100,28 +103,29 @@ QString MyStandardItem::getStringAlgo()
 
 bool MyStandardItem::isBegin()
 {
-    return position == 0;
+    return indexAlgoDisplayed == 0;
 }
 
 bool MyStandardItem::isEnd()
 {
-    return(position == _algo._mvts.size());
+    return(indexAlgoDisplayed == _algo._mvts.size());
 }
 
 void MyStandardItem::goToBegin()
 {
-    position = 0;
+    indexAlgoDisplayed = 0;
+    _algo.indexNextToQueue = 0;
 }
 
 void MyStandardItem::goToEnd()
 {
-    position = _algo._mvts.size();
+    indexAlgoDisplayed = _algo._mvts.size();
 }
 
 QList<int> MyStandardItem::getNextMoves()
 {
     QList<int> mvts;
-    for (int i=position; i< _algo._mvts.size(); ++i)
+    for (int i=indexAlgoDisplayed; i< _algo._mvts.size(); ++i)
         mvts << _algo._mvts[i];
 
     return mvts;

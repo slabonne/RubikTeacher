@@ -42,7 +42,7 @@ class GLRubik : public QOpenGLWidget, protected QOpenGLFunctions
     GLRubik(QWidget *parent);
      ~GLRubik();
 
-     QThreadMvtFace * _qThreadMvtFace = nullptr;			// Face Moves QThreadMvtFace * _qThreadMvtFace = NULL;			// Face Moves
+     QThreadMvtFace * _qThreadMvtFace = nullptr;
 
     bool _animation;
 

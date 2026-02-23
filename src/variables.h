@@ -22,8 +22,6 @@
 #include <QAbstractItemModel>
 #include <QIcon>
 
-#define _COUCHE_PAR_COUCHE_ 1;  //"Couche Par Couche (débutant)"
-#define _FRIDRICH_ 2; //"Jessica Fridrich (expert)"
 
 #define	_CUBE_ROWS_   	3
 #define	_CUBE_FACES_ 	6
@@ -53,6 +51,9 @@ const unsigned char perm_Mx_[12] = {34,31,28,43,40,37,7,4,1,16,13,10};
 const unsigned char perm_My_[12] = {21,22,23,3,4,5,48,49,50,32,31,30};
 const unsigned char perm_Mz_[12] = {12,13,14,46,49,52,41,40,39,25,22,19};
 
+
+
+class GLRubik;
 
 class Variables
 {
@@ -117,6 +118,9 @@ struct Algorithm
     std::vector<unsigned char>getMvts(bool updatePlayer = false);
 
 	bool isAlgo();
+
+    int queueNextMove(GLRubik* glRubik, bool updatePlayer);
+    int indexNextToQueue = 0;
 };
 
 struct Step

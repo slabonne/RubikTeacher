@@ -85,9 +85,6 @@ private:
 
 protected:
     void resizeEvent ( QResizeEvent * event );
-
-signals:
-    void nextLin();
 };
 
 #endif // QDISPLAYSOLUCE_H

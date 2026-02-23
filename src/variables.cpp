@@ -18,6 +18,7 @@
 
 #include "variables.h"
 #include "ResolutionMethod/resolution.h"
+#include "src/Cube3D/glrubik.h"
 
 #include <QDebug>
 
@@ -253,3 +254,14 @@ bool Algorithm::isAlgo()
 {
     return (_format == _ALGO || _format == _ALGO_UNITAIRE);
 }
+
+int Algorithm::queueNextMove(GLRubik *glRubik, bool updatePlayer)
+{
+    if (indexNextToQueue >= _mvts.size())
+        return _VOID_;
+    int mvt = _mvts[indexNextToQueue++];
+    glRubik->queueMovement(mvt, updatePlayer);
+    return mvt;
+}
+
+

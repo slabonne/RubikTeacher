@@ -107,7 +107,8 @@ void QDisplaySoluce::displayAlgo(const QModelIndex & modelindex)
     if (!item)
         return;
     Algorithm *algo = item->getAlgo();
-    item->position = 0;
+    item->indexAlgoDisplayed = 0;
+    item->_algo.indexNextToQueue = 0;
 
      updatePlayer();
 
@@ -128,11 +129,6 @@ MyStandardItem *QDisplaySoluce::getCurrentAlgo()
     MyStandardItem* item =  static_cast<MyStandardItem*>(model->item(row,1));
     return item;
 }
-
-
-
-
-
 
 
 
@@ -163,7 +159,6 @@ int QDisplaySoluce::PrevMvt()
     else
         return mvt;
 }
-
 
 bool QDisplaySoluce::Begin(unsigned char cube[CUBE_SIZE])
 {
@@ -258,7 +253,7 @@ int QDisplaySoluce::getCurrentRow() const
 
 void QDisplaySoluce::play()
 {
-    MyStandardItem* algo =  getCurrentAlgo();
+    MyStandardItem* algo = getCurrentAlgo();
     if (!algo)
         return;
 
@@ -289,9 +284,8 @@ void QDisplaySoluce::next()
     if (!algo)
         return;
 
-    int nextMvt = NextMvt();
+    int nextMvt = algo->_algo.queueNextMove(MainWindow::getInstance()->glRubik, true);
 
-     MainWindow::getInstance()->queueMovement(nextMvt, true);
      if (nextMvt == _VOID_ && algo->isSoluce())
        nextLine();
 }
@@ -339,7 +333,8 @@ void QDisplaySoluce::nextLine()
     if (!item)
         return;
 
-    item->position = 0;
+    item->indexAlgoDisplayed = 0;
+     item->_algo.indexNextToQueue = 0;
 
     updatePlayer();
 
