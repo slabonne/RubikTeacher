@@ -458,6 +458,12 @@ void MainWindow::mapMethods()
 
     _listMethodes.clear();
 
+
+    // + Kociemba
+    Resolution_Kociemba * resolution_kociemba = new Resolution_Kociemba(this);
+    _listMethodes.push_back(resolution_kociemba);
+    ui->methods->addItem(resolution_kociemba->getTitle());
+
     // + Layout By Layout
     Resolution_Layer * resolution_layer = new Resolution_Layer(this);
     _listMethodes.push_back(resolution_layer);

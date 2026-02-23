@@ -41,7 +41,7 @@ class Resolution
         virtual QString getTitle() const = 0;
 
         virtual bool solve(const unsigned char[CUBE_SIZE], QProgressBar *  = NULL) {return true;};
-        virtual void fill_map() = 0;
+        virtual void fill_map();
 
         static void Copie_Cube(const unsigned char cube[CUBE_SIZE], unsigned char cube_result[CUBE_SIZE]);
         static void Superpose(const unsigned char cube1[CUBE_SIZE], const unsigned char cube2[CUBE_SIZE], unsigned char cube_res[CUBE_SIZE]);
@@ -151,6 +151,16 @@ private:
     std::map<QString, Algorithm* > map_algorithms_OrientationCroix2;
     std::map<QString, Algorithm* > map_algorithms_PlacementCoinsFace2;
     std::map<QString, Algorithm* > map_algorithms_OrientationCoins2;
+};
+
+
+class Resolution_Kociemba : public Resolution
+{
+public:
+    Resolution_Kociemba(MainWindow * fenprincipale);
+
+    virtual QString getTitle() const { return QObject::tr("Kociemba"); };
+    virtual bool solve(const unsigned char cube[CUBE_SIZE], QProgressBar * progressbar = NULL);
 };
 
 

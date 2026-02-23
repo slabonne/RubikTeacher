@@ -33,6 +33,11 @@ Resolution::Resolution(MainWindow * fenprincipale)
      _mainFrame = fenprincipale;
 }
 
+void Resolution::fill_map()
+{
+
+}
+
 
 
 ////////////////////////////////////////////////////////

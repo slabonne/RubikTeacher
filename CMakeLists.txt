@@ -16,7 +16,7 @@ set(TS_FILES rubik_fr.ts)
 
 file(GLOB_RECURSE PROJECT_SOURCES
      CONFIGURE_DEPENDS
-     "*.h" "*.cpp" "*.ui")
+     "*.h" "*.hpp" "*.cpp" "*.ui")
 
 qt_add_executable(RubikTeacher
     MANUAL_FINALIZATION
